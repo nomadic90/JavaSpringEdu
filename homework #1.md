@@ -95,8 +95,7 @@
         v. introduction | declare intertype
             AOP를 좀 더 동적으로 사용할 수 있게 하는 방법
 
-        ![AOP 이미지](./img/AOP-picture.png)
-
+        ![AOP 이미지](/img/AOP-picture.png)
 
 ### 5. proxy class
 
@@ -156,5 +155,5 @@
         프로그램들에 대한 요구사항이 많아짐에 따라 pom.xml의 구조도 점점 복잡해져 갔는데, 더 이상 개발자들을 도우지 못하고 발목만 잡는 존재가 되어서 gradle에서는 꼭 사용하지 않아도 되는 것으로 바뀌었습니다.
 
         대신, jvm에서 구동되는 script 언어인 groovy를 통해서 라이브러리 상속 관계를 표현할 수 있게 되어서, xml의 한계를 극복한 형태 입니다.
-        
+
 
