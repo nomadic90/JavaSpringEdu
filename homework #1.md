@@ -95,7 +95,7 @@
         v. introduction | declare intertype
             AOP를 좀 더 동적으로 사용할 수 있게 하는 방법
 
-        ![AOP 이미지](/img/AOP-picture.png)
+![AOP 이미지](./img/AOP-picture.png)
 
 ### 5. proxy class
 
