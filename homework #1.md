@@ -95,7 +95,7 @@
         v. introduction | declare intertype
             AOP를 좀 더 동적으로 사용할 수 있게 하는 방법
 
-        [(AOP-picture)]
+        ![AOP 이미지](./img/AOP-picture.png)
 
 
 ### 5. proxy class
@@ -113,4 +113,48 @@
 
 ### 7. (java) Thread & 공용 객체
 
+    프로그램을 실행 시키면, process가 하나 생성되어 실행이 됩니다. 프로그램 안에서 한번에 여러개의 연산을 수행할 수 있는 부분이 있다면, thread를 생성해서 실행할 수 있습니다.
+    알아서 각각 나눠진 task들은 thread에서 실행되며, 시간을 단축할 수 있습니다.
+
+    하지만, 이들 중에 공용으로 접근해야하는 리소스가 존재하는 경우가 발생할 떄도 있습니다. 이를 공용 객체라고 합니다.
+    공용 객체는 하나가 아니라 여러개가 있을 수 있으며, 때에 따라서 이 떄문에 dead lock이 발생 할 수도 있습니다.
+    아니면, 공용객체에 대한 접근이 꼬여서 데이터가 이상하게 나오는 경우도 있습니다.
+
+    이를 방지하기 위해서 java에서는 synchronize 라는 선언을 제공 합니다. 해당 키워드가 선언되어 있으면, thread 들은 공용 객체에 접근 시, 순차적으로 접근하게 되며, 이를 thread safe하게 된다고 말 합니다.
+
 ### 8. Gradle / Maven 은 무엇인가?
+
+    java를 빌드 시 사용할 수 있는 빌드 tool 중에 하나 입니다.
+
+    1) Maven
+
+        실행 시 다음과 같은 순서대로 수행 됩니다.
+        compile -> test -> packaging
+
+        i. compile
+            src/main/java 폴더에 있는 모든 소스가 컴파일 됩니다.
+
+        ii. test
+            src/test/java, src/test/resources에 있는 테스트 관련 소스들이 컴파일 됩니다. 그리고 정의된 test 들이 순차적으로 수행
+
+        iii. packaging
+            위의 과정이 완료 된 후, jar, war 와 같은 파일로 압축.
+
+        Gradle 보다 먼저 나온 빌드 tool
+        pom.xml를 이용해서 dependency 관계를 정의하고, 빌드하는 구조
+        
+        프로젝트에 대한 정보를 잘 보여줌. (ex. unit test coverage, dependancy list, cross referenced check)
+
+        위의 내용을 정리하자면, 빌드 툴이자 라이브러리 관리자 역할을 합니다.
+
+    2) Gradle
+
+        위에 나오는 Maven 보다 좀 더 성능이 좋고, 사용하기 유용한 기능들을 추가한 빌드 툴 입니다.
+        나중에 나온 만큼, 기존에 존재하던 빌드 툴들의 장점을 모아서 만들었습니다.
+
+        가장 큰 특징으로는 pom.xml을 통해서 외부 라이브러리들을 관리하는 것을 할 필요가 없습니다.
+        프로그램들에 대한 요구사항이 많아짐에 따라 pom.xml의 구조도 점점 복잡해져 갔는데, 더 이상 개발자들을 도우지 못하고 발목만 잡는 존재가 되어서 gradle에서는 꼭 사용하지 않아도 되는 것으로 바뀌었습니다.
+
+        대신, jvm에서 구동되는 script 언어인 groovy를 통해서 라이브러리 상속 관계를 표현할 수 있게 되어서, xml의 한계를 극복한 형태 입니다.
+        
+
