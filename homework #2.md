@@ -85,5 +85,31 @@ public interface exampleClass {
 }
 ```
 
-### 4. java web programming - 4 types of scope(page, request, session, application)
+### 4. Java web programming - 4 types of scope (page, request, session, application)
 
+    1) Page
+
+        한 JSP 페이지 내에서 유효한 객체.
+        JSP 파일에는 pageContext 가 내장되어 있으며, 이 객체는 page 영역 내에서만 유효.
+        JSP 파일에 <% %> 안에 변수를 사용하면, 이 변수는 JSP 파일 내에서만 유효함.
+
+    2) Request
+
+        요청을 받아서 응답을 하기까지 객체가 유효한 영역
+        request 관련 변수가 효유한 구간은 모두 Request Scope이라고 볼 수 있다.
+
+    3) Session
+
+        브라우저 당 생기는 하나의 객체.
+        같은 세션 안에서는 요청과 응답이 모두 같은 session의 객체를 바라보게 되어 있습니다.
+        로그인 정보와 같은 것이 세션으로 쓰일 수 있습니다.
+        세션이 반환되기 전까지는 세션은 유지 됩니다.
+
+    4) Application
+    
+        하나의 Application 당, 1개의 Application Object가 생성됩니다. 같은 Application 내에서 요청되는 페이지들은 같은 Application object를 공유합니다.
+        Application 이 종료되면, 반환됩니다.
+
+    이들 Scope는 범위가 각각 다른데 아래의 순서대로 큰 범위를 가진다고 볼 수 있습니다.
+
+    Page < Request < Session < Application    
