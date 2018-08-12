@@ -41,9 +41,35 @@
 
 ### 2. Lombok 사용법
 
-    
+    Lombok은 java에서 객체에서 필요로 하는 공통 함수들을 annotation을 통해서 쉽게 자동으로 구현해주는 프로젝트 입니다.
+
+    위에서 설명한 builder pattern을 아주 손쉽게 구현해주는 java 에 빛과 소금과 같은 존재라고 할 수 있습니다.
+
+    example)
+
+    @Getter
+    @Setter
+    public class className{
+        private int param1;
+    }
+
+    위의 예제 처럼 작성한다면, class 전체의 field에 getter, setter method 자동으로 생성 됩니다.
+
+    static void main(String args[]){
+        className cn = new className()
+                        .param1(1)
+                        .build();
+    }
+
+    각각의 getter, setter 메소드를 사용하기 위해선 위의 예제 처럼 작성 합니다.
+    마지막에 build() method는 꼭 호출해줘야합니다.
+
+    나머지, getter, tostring 과 같은 기능들은 구글에서 잘 찾습니다.
+
 
 ### 3. Default method
+
+    
 
 ### 4. java web programming - 4 types of scope(page, request, session, application)
 
