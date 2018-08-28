@@ -1,5 +1,7 @@
 Must be better than Skype
 
+created at 2018-08-25
+
 #1 설명
 
     Skype를 대체할만한 채팅 웹이 만들고 싶어졌습니다.
